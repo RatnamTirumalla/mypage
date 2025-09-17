@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./keyframes.css" />
+    <title>Landing Page</title>
+    <style>
+      /* ------------------- Base Styles ------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fff;
+}
+
+/* ------------------- Navigation ------------------- */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 45px;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+/* Hide menu toggle checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Hamburger icon */
+.hamburger {
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+  background-color: transparent;
+}
+
+/* Left section: logo + nav links */
+.left-nav-section {
+  display: inline-flex;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style-type: none;
+  margin-top: 3px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: blue;
+}
+
+.left-nav-section h3 {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+/* Right nav section buttons */
+.right-nav-section {
+  display: flex;
+  gap: 10px;
+}
+
+.login-btn {
+  border: none;
+  margin-right: 10px;
+  cursor: pointer;
+  /* transition : property duration timing-function delay */
+  transition: transform 0.3s ease;
+  /* border: 1px solid red; */
+}
+
+.login-btn:hover {
+  transform: scale(1.5);
+}
+
+.signup-btn {
+  background-color: rgb(72, 72, 240);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 2s ease;
+}
+
+.signup-btn:hover {
+  background-color: rgb(195, 200, 42);
+  color: black;
+  transform: scale(1.5);
+}
+
+/* ------------------- Hero Section ------------------- */
+
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 90px 50px;
+  flex-wrap: wrap;
+}
+
+.free-trial {
+  color: gray;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 50px;
+  margin-top: 10px;
+}
+
+.description {
+  margin-top: 20px;
+  max-width: 400px;
+}
+
+#hero-btn1,
+#hero-btn2 {
+  transition: all 0.3s ease;
+}
+
+#hero-btn1 {
+  width: 100px;
+  border: none;
+  background-color: rgb(72, 72, 240);
+  padding: 12px 5px;
+  color: white;
+  border-radius: 8px;
+  margin-top: 45px;
+  cursor: pointer;
+}
+
+#hero-btn1:hover {
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+}
+
+#hero-btn2 {
+  width: 130px;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 12px 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+#hero-btn2:hover {
+  background-color: rgb(72, 72, 240);
+  color: white;
+}
+
+.hero-image img {
+  width: 500px;
+  margin-right: 50px;
+  transition: transform 0.3s ease;
+}
+
+.hero-image img:hover {
+  transform: scale(1.1);
+}
+
+/* ------------------- Footer ------------------- */
+footer {
+  text-align: center;
+  font-size: 14px;
+  padding: 20px;
+}
+
+/* ------------------- Media Queries ------------------- */
+
+/* Tablet (<= 768px) */
+
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 20px;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .left-nav-section {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    display: none;
+    margin-top: 10px;
+  }
+
+  #menu-toggle:checked + .hamburger + .left-nav-section .nav-links {
+    display: flex;
+  }
+
+  .right-nav-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .hero-section {
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 20px;
+    text-align: center;
+  }
+  .hero-image img {
+    width: 350px;
+    margin-top: 30px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  #hero-btn1,
+  #hero-btn2 {
+    display: block;
+    margin: 20px auto 0 auto;
+  }
+}
+
+/* Mobile (<=480px) */
+
+@media (max-width: 480px) {
+  .left-nav-section h3 {
+    font-size: 18px;
+  }
+
+  .hero-image img {
+    width: 280px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .signup-btn,
+  .login-btn {
+    font-size: 14px;
+    padding: 17px;
+  }
+
+  .nav-links li a {
+    font-size: 14px;
+  }
+}
+
+    </style>
+
+  </head>
+
+  <body>
+    <main class="main-container">
+      <!-- Navigation bar goes here  -->
+      <nav>
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="hamburger"> &#9776; </label>
+
+        <div class="left-nav-section">
+          <h3>Lando.</h3>
+          <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Contact.</a></li>
+          </ul>
+        </div>
+
+        <div class="right-nav-section">
+          <button class="login-btn">Log in</button>
+          <button class="signup-btn">Sign up</button>
+        </div>
+      </nav>
+
+      <!-- Hero starts here  -->
+
+      <main class="hero-section">
+        <section class="hero-info">
+          <p class="free-trial">- free 30 days trial</p>
+          <h1>
+            The best way <br />
+            to showcase <br />
+            your project
+          </h1>
+          <p class="description">
+            Here you can put your short description about your project.
+          </p>
+
+          <button id="hero-btn1">Try for free</button>
+          <button id="hero-btn2">See how it works</button>
+        </section>
+        <section class="hero-image">
+          <img src="car.webp" alt="carimage" />
+        </section>
+      </main>
+
+      <footer style="text-align: center; font-size: 14px">
+        <p>
+          Trusted by the individuals and teams at the world's <br />best
+          companies.
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>
